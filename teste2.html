@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Namoro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e00ec4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #mensagem {
+            background-color: #ffcdd2;
+            border-radius: 10px;
+            padding: 20px;
+            width: 60%;
+            margin: 50px auto;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: #d81b60;
+        }
+        
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        
+        .botoes {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .botao {
+            background-color: #d81b60;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .botao:hover {
+            background-color: #c2185b;
+        }
+    </style>
+</head>
+<body>
+    <div id="mensagem">
+        <h1>Quer namorar comigo?</h1>
+        <p>Minha vida ganharia um brilho ainda mais especial se você aceitasse ser minha namorada. Topa?</p>
+        <div class="botoes">
+            <button class="botao" onclick="resposta('sim')">Sim</button>
+            <button class="botao" onclick="resposta('nao')">Não</button>
+        </div>
+    </div>
+
+    <script>
+        function resposta(resposta) {
+            if (resposta === 'sim') {
+                alert('Isso é maravilhoso! Te amo!');
+            } else if (resposta === 'nao') {
+                alert('Tudo bem, talvez um dia. :)');
+            }
+        }
+    </script>
+</body>
+</html>

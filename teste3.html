@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Namoro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #532b38;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #mensagem {
+            background-color: #f8bbd0;
+            border-radius: 10px;
+            padding: 20px;
+            width: 60%;
+            margin: 50px auto;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+            animation: fade-in 1s ease-out;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        h1 {
+            color: #e91e63;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        
+        .botoes {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        .botao {
+            background-color: #e91e63;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .botao-nao {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .botao:hover {
+            background-color: #c2185b;
+            animation: none;
+        }
+
+        .resposta {
+            font-size: 24px;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fade-in 1s ease-out;
+        }
+
+        .resposta-animada {
+            animation: bounce-in 1s ease-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.1);
+            }
+            75% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="mensagem">
+        <h1>Quer namorar comigo?</h1>
+        <p>Minha vida ganharia um brilho ainda mais especial se você aceitasse ser minha namorada. Topa?</p>
+        <div class="botoes">
+            <button class="botao" onclick="resposta('sim')">Sim</button>
+            <button class="botao botao-nao" disabled>Não</button>
+        </div>
+        <div class="resposta" id="resposta-sim"></div>
+    </div>
+
+    <script>
+        function resposta(resposta) {
+            var respostaElement = document.getElementById("resposta-" + resposta);
+            if (resposta === 'sim') {
+                respostaElement.textContent = "Isso é maravilhoso! Te amo!";
+                respostaElement.classList.add("resposta-animada");
+                respostaElement.style.opacity = 1;
+            }
+        }
+    </script>
+</body>
+</html>
